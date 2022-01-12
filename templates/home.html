@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+ <h1>Bienvenue !</h1>
+ <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+     <div class="card-header">Guide d'utilisation</div>
+     <div class="card-body">
+         <h4 class="card-title">CHromatisateur Automatique de Terminaisons LITuaniennes</h4>
+         <p class="card-text">Entrez une phrase en lituanien puis cliquez sur Analyser. Les terminaisons des noms communs seront automatiquement colorées selon le cas auquel est le nom.</p>
+         <p class="card-text">Code couleur:
+            <span style='color: red'>Nominatif</span>
+            <span style='color:blue;'>Génitif</span>
+            <span style='color:deeppink;'>Datif</span>
+            <span style='color:green;'>Accusatif</span>
+            <span style='color:mediumpurple;'>Instrumental</span>
+            <span style='color:orange;'>Locatif</span>
+            <span style='color:brown;'>Vocatif</span>
+        </p>
+        <p class="card-text">Sous-ligne: 
+            <span style="text-decoration: underline lightblue;">Masculin Singulier</span>
+            <span style="text-decoration: underline pink;">Féminin Singulier</span>
+            <span style="text-decoration: underline blue;">Masculin Pluriel</span>
+            <span style="text-decoration: underline red;">Féminin Pluriel</span>
+        </p>
+     </div>
+ </div>
+
+ <div class="d-flex">
+     <textarea id="inText" cols="40"></textarea>
+     <button type="button" class="btn btn-primary" onclick="sendText()">Analyser !</button>
+ </div>
+
+ <div id="outText" style="font-size: 40px;"></div>
+{% endblock %}
+
+{% block javascript %}
+<script src="{% static 'scripts/home.js' %}"></script>
+{% endblock %}

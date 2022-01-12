@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+<p>Mon nom est {{ nom }}.</p>
+
+<p>Voici mes hobbies :</p>
+<ul>
+    {% for hobbie in hobbies %}
+    <li>{{ hobbie }}</li>
+    {% endfor %}
+</ul>
+
+<p>Mais j'aime particulièrement le {{ hobbies.0 }} !</p>
+
+{% for membre in membres %}
+        <p>{{ membre.nom }}, {{ membre.prenom }}</p>
+{% endfor %}
+
+{% for nom, val in bigmac.items %}
+    <p>{{ nom }} : {{ val }}</p>
+{% endfor %}
+
+{% if langue == "fr" %}
+    <p>Quelque chose en français...</p>
+{% elif langue == "en" %}
+    <p>Something in English...</p>
+{% else %}
+    <p>{% lorem 2 p %}</p>
+{% endif %}
+
+{{ date_birthday | date:"d F Y"}}
+
+{% endblock %}

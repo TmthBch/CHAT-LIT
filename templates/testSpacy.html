@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<p>{{ doc.text }}</p>
+
+<ul>
+    {% for token in doc %}
+    <li>{{ token.text }} {{ token.lemma_ }} {{ token.pos_ }} {{ token.tag_ }} {{ token.dep_ }} {{ token.shape_ }}</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
